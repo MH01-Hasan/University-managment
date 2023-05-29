@@ -14,7 +14,7 @@
   "author": "",
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "lint-prettier"
+      "npm run lint-prettier"
     ]
   },
   "license": "ISC",

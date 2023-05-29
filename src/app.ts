@@ -7,7 +7,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/', async (req: Request, res: Response) => {
-  res.send('hello World')
+  res.send('hello World University managnent')
 })
 
 export default app
