@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\error\\.44a6b9d926eff996b697eff37f63bc6fc61c85d3-audit.json",
+    "files": [
+        {
+            "date": 1686060570288,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\error\\UM-2023-06-06-20-error.log",
+            "hash": "716c04bda3ecb1b52bb279fdc7ff5f052eee5825f5401d4d60bde312082e59ed"
+        }
+    ],
+    "hashType": "sha256"
+}
