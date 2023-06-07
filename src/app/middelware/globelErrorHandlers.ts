@@ -1,54 +1,52 @@
-import { NextFunction, Request, Response } from 'express'
+import { ErrorRequestHandler } from 'express'
 import config from '../../config'
 import { IgenericErrormessage } from '../../interface/error'
 import handelValidationError from '../../error/handelValidationError'
-import { error } from 'winston'
 import ApiError from '../../error/ApiError'
-import { Error } from 'mongoose'
+import { errorlogger } from '../../shared/Logger'
 
-const globelErrorHandlers = (
-  err: Error.ValidationError, // Quick fixed ar moddome tik korce ai khane just err chilo
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  let statusCode = 5000
+const globelErrorHandlers: ErrorRequestHandler = (error, req, res, next) => {
+  config.evn === 'development'
+    ? console.log('Global error Handel', error)
+    : errorlogger.error('Global error Handel', error)
+
+  let statusCode = 500
   let message = 'Something Went Wrong !'
   let errorMessage: IgenericErrormessage[] = []
 
-  if (err.name === 'ValidationError') {
-    const simplyerror = handelValidationError(err)
-    ;(statusCode = simplyerror.statusCode),
-      (message = simplyerror.message),
-      (errorMessage = simplyerror.errorMessage)
+  if (error.name === 'ValidationError') {
+    const simplyerror = handelValidationError(error)
+    statusCode = simplyerror.statusCode
+    message = simplyerror.message
+    errorMessage = simplyerror.errorMessage
   } else if (error instanceof ApiError) {
-    ;(statusCode = error?.statusCode),
-      (message = error?.message),
-      (errorMessage = error?.message
-        ? [
-            {
-              path: '',
-              message: error?.message,
-            },
-          ]
-        : [])
+    statusCode = error?.statusCode
+    message = error?.message
+    errorMessage = error?.message
+      ? [
+          {
+            path: '',
+            message: error?.message,
+          },
+        ]
+      : []
   } else if (error instanceof Error) {
-    ;(message = error?.message),
-      (errorMessage = error?.message
-        ? [
-            {
-              path: '',
-              message: error?.message,
-            },
-          ]
-        : [])
+    message = error?.message
+    errorMessage = error?.message
+      ? [
+          {
+            path: '',
+            message: error?.message,
+          },
+        ]
+      : []
   }
 
   res.status(statusCode).json({
     success: false,
     message,
     errorMessage,
-    stack: config.evn !== 'production' ? err?.stack : undefined,
+    stack: config.evn !== 'production' ? error?.stack : undefined,
   })
 
   next()
