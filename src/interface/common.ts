@@ -1,7 +1,7 @@
-import { IgenericErrormessage } from './error'
+import { IgenericErrormessage } from './error';
 
 export type Igenericresponce = {
-  statusCode: number
-  message: string
-  errorMessage: IgenericErrormessage[]
-}
+  statusCode: number;
+  message: string;
+  errorMessage: IgenericErrormessage[];
+};
