@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { AcamidicSemisterService } from './academicSemester.service';
 import catchasync from '../../../shared/catchAsync';
+import sendResponse from '../../../shared/sendResponse';
 
 const creatAcadimicSemister = catchasync(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -9,9 +10,10 @@ const creatAcadimicSemister = catchasync(
       AcademicSemister
     );
     next();
-    res.status(200).json({
-      success: true,
-      massege: 'success  creat Academic semister ',
+    sendResponse(res, {
+      statusCode: 200,
+      success: false,
+      massege: 'success  creat Academic semister',
       data: result,
     });
   }
