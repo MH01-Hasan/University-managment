@@ -25,12 +25,14 @@ const creatAcadimicSemister = catchasync(
 
 const getAllSemester = catchasync(
   async (req: Request, res: Response, next: NextFunction) => {
+    const filltring = pick(req.query, ['searchTerm']);
+
     const PaginationObject = pick(req.query, pagination);
 
     const result = await AcamidicSemisterService.getAllsemester(
+      filltring,
       PaginationObject
     );
-    console.log(result.data);
 
     sendResponse<IacademicSemester[]>(res, {
       statusCode: 200,
