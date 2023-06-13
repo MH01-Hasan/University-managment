@@ -4,6 +4,11 @@ type Iapiresponse<T> = {
   statusCode: number;
   success: boolean;
   massege: string | null;
+  meta?: {
+    page: number;
+    limit: number;
+    total: number;
+  } | null;
   data?: T | null;
 };
 
@@ -12,9 +17,10 @@ const sendResponse = <T>(res: Response, data: Iapiresponse<T>): void => {
     statusCode: data?.statusCode,
     success: data?.success,
     massege: data?.massege || null,
-    data: data?.data || null,
+    meta: data?.meta || null,
+    data: data.data || null,
   };
-  res.send(data?.statusCode).json(jsondata);
+  res.status(data.statusCode).json(jsondata);
 };
 
 export default sendResponse;
