@@ -6,6 +6,7 @@ import ApiError from '../../error/ApiError';
 import { errorlogger } from '../../shared/Logger';
 import { ZodError } from 'zod';
 import handelZodError from '../../error/handelZodError';
+import handelCastError from '../../error/handelCastError';
 
 const globelErrorHandlers: ErrorRequestHandler = (error, req, res, next) => {
   config.evn === 'development'
@@ -23,6 +24,11 @@ const globelErrorHandlers: ErrorRequestHandler = (error, req, res, next) => {
     errorMessage = simplyerror.errorMessage;
   } else if (error instanceof ZodError) {
     const simplyerror = handelZodError(error);
+    statusCode = simplyerror.statusCode;
+    message = simplyerror.message;
+    errorMessage = simplyerror.errorMessage;
+  } else if (error?.name === 'CastError') {
+    const simplyerror = handelCastError(error);
     statusCode = simplyerror.statusCode;
     message = simplyerror.message;
     errorMessage = simplyerror.errorMessage;

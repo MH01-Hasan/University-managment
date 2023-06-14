@@ -5,6 +5,7 @@ import sendResponse from '../../../shared/sendResponse';
 import pick from '../../../shared/pick';
 import { pagination } from '../../../conostans/pagination';
 import { IacademicSemester } from './academicSemester.interface';
+import { fillterfield } from './academicSemester.const';
 
 const creatAcadimicSemister = catchasync(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -15,7 +16,7 @@ const creatAcadimicSemister = catchasync(
 
     sendResponse(res, {
       statusCode: 200,
-      success: false,
+      success: true,
       massege: 'success  creat Academic semister',
       data: result,
     });
@@ -25,7 +26,7 @@ const creatAcadimicSemister = catchasync(
 
 const getAllSemester = catchasync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const filltring = pick(req.query, ['searchTerm']);
+    const filltring = pick(req.query, fillterfield);
 
     const PaginationObject = pick(req.query, pagination);
 
@@ -45,7 +46,24 @@ const getAllSemester = catchasync(
   }
 );
 
+const getSingelSemester = catchasync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const id: string = req.params.id;
+
+    const result = await AcamidicSemisterService.getSingelSemester(id);
+
+    sendResponse<IacademicSemester>(res, {
+      statusCode: 200,
+      success: true,
+      massege: 'Semester Data',
+      data: result,
+    });
+    next();
+  }
+);
+
 export const AcadimicSemisterController = {
   creatAcadimicSemister,
   getAllSemester,
+  getSingelSemester,
 };

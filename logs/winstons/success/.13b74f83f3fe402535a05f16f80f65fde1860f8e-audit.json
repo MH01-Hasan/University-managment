@@ -94,6 +94,26 @@
             "date": 1686684464240,
             "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\UM-14-06-2023-01-success.log",
             "hash": "27c3c5e50af9eb5f90ebca3a555ca3c7f91df2e94a896cbf3e658222e877d209"
+        },
+        {
+            "date": 1686760206122,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\UM-14-06-2023-22-success.log",
+            "hash": "5cf6dd518b27e61f015d25a95790a0460819d9554fe8ac35ecc2e377f983e42f"
+        },
+        {
+            "date": 1686762033171,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\UM-14-06-2023-23-success.log",
+            "hash": "0d6fcf19e95145f0991e44e702ffac9aa3786e6c5ba536a76b726f16303e8e16"
+        },
+        {
+            "date": 1686765782621,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\UM-15-06-2023-00-success.log",
+            "hash": "4e0126950ce3845645b1cb2b13f83719a12bffd46ecb8a8bef4f22d78df340d2"
+        },
+        {
+            "date": 1686769351918,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\UM-15-06-2023-01-success.log",
+            "hash": "698400ae5837f1d59a10cb3cef4e419f5da5a655312a86647ae0f04b215d9b43"
         }
     ],
     "hashType": "sha256"

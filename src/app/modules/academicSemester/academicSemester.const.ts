@@ -24,3 +24,7 @@ export const academicSemestertitelcodemaper: {
   Summer: '02',
   Fall: '03',
 };
+
+export const acadimicsemestersearchvalue = ['titel', 'code', 'year'];
+
+export const fillterfield = ['searchTerm', 'titel', 'code', 'year'];

@@ -11,7 +11,7 @@ const creatAcademicSemisterZodSchima = z.object({
     titel: z.enum([...academicSemestertitel] as [string, ...[string]], {
       required_error: 'Titel is Requred',
     }),
-    year: z.number({
+    year: z.string({
       required_error: 'Number is Requred',
     }),
     code: z.enum([...academicSemesterCode] as [string, ...[string]], {

@@ -13,7 +13,7 @@ import status from 'http-status';
 const academicSemesterSchime = new Schema<IacademicSemester>(
   {
     titel: { type: String, required: true, enum: academicSemestertitel },
-    year: { type: Number, required: true },
+    year: { type: String, required: true },
     code: { type: String, required: true, enum: academicSemesterCode },
     startMonth: {
       type: String,
