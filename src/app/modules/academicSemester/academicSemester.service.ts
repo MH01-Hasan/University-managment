@@ -111,8 +111,37 @@ const getSingelSemester = async (
   return result;
 };
 
+const updateSemester = async (
+  id: string,
+  payload: Partial<IacademicSemester>
+) => {
+  if (
+    payload.titel &&
+    payload.code &&
+    academicSemestertitelcodemaper[payload.titel] !== payload.code
+  ) {
+    throw new ApiError(status.BAD_REQUEST, 'invalid semester Code');
+  }
+
+  const result = await AcademicSemister.findOneAndUpdate({ _id: id }, payload, {
+    new: true,
+  });
+
+  return result;
+};
+
+const deleteSemester = async (
+  id: string
+): Promise<IacademicSemester | null> => {
+  const result = await AcademicSemister.findByIdAndDelete({ _id: id });
+
+  return result;
+};
+
 export const AcamidicSemisterService = {
   creatAcademicSemester,
   getAllsemester,
   getSingelSemester,
+  updateSemester,
+  deleteSemester,
 };

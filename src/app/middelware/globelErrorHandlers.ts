@@ -8,7 +8,7 @@ import { ZodError } from 'zod';
 import handelZodError from '../../error/handelZodError';
 import handelCastError from '../../error/handelCastError';
 
-const globelErrorHandlers: ErrorRequestHandler = (error, req, res, next) => {
+const globelErrorHandlers: ErrorRequestHandler = (error, req, res) => {
   config.evn === 'development'
     ? console.log('Global error Handel', error)
     : errorlogger.error('Global error Handel', error);
@@ -61,8 +61,6 @@ const globelErrorHandlers: ErrorRequestHandler = (error, req, res, next) => {
     errorMessage,
     stack: config.evn !== 'production' ? error?.stack : undefined,
   });
-
-  next();
 };
 
 export default globelErrorHandlers;
