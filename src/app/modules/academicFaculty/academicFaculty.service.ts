@@ -42,32 +42,6 @@ const getAllFaculty = async (
       })),
     });
   }
-
-  // const andCondition = [
-  //   {
-  //     $or: [
-  //       {
-  //         titel: {
-  //           $regex: searchTerm,
-  //           $options: 'i',
-  //         },
-  //       },
-  //       {
-  //         code: {
-  //           $regex: searchTerm,
-  //           $options: 'i',
-  //         },
-  //       },
-  //       {
-  //         year: {
-  //           $regex: searchTerm,
-  //           $options: 'i',
-  //         },
-  //       },
-  //     ],
-  //   },
-  // ];
-
   const { page, limit, skip, sortBy, sortOrder } =
     Pagination_helper.calculatePagination(PaginationObject);
 

@@ -10,6 +10,9 @@ const academicFacultyModelSchime = new Schema<IAcademicFaculty>(
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
   }
 );
 
