@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { StudentBloodGroup, Studentgender } from '../student/student.conts';
+import { FBloodGroup, Fgender } from '../faculty/faculty.constant';
 
 // req validation
 const creatuserZodSchima = z.object({
@@ -97,7 +98,63 @@ const creatuserZodSchima = z.object({
   }),
 });
 
+//// creat Faculty jod Schime
+const createFacultyZodSchema = z.object({
+  body: z.object({
+    password: z.string().optional(),
+    faculty: z.object({
+      name: z.object({
+        firstName: z.string({
+          required_error: 'First name is required',
+        }),
+        lastName: z.string({
+          required_error: 'Last name is required',
+        }),
+        middleName: z.string().optional(),
+      }),
+      gender: z.enum([...Fgender] as [string, ...[string]], {
+        required_error: 'gender is Requred',
+      }),
+
+      dateOfBirth: z.string({
+        required_error: 'Date of birth is required',
+      }),
+      email: z
+        .string({
+          required_error: 'Email is required',
+        })
+        .email(),
+      contactNo: z.string({
+        required_error: 'Contact number is required',
+      }),
+      emergencyContactNo: z.string({
+        required_error: 'Emergency contact number is required',
+      }),
+      bloodGroup: z
+        .enum([...FBloodGroup] as [string, ...[string]], {})
+        .optional(),
+      presentAddress: z.string({
+        required_error: 'Present address is required',
+      }),
+      permanentAddress: z.string({
+        required_error: 'Permanent address is required',
+      }),
+      academicDepartment: z.string({
+        required_error: 'Academic department is required',
+      }),
+
+      academicFaculty: z.string({
+        required_error: 'Academic faculty is required',
+      }),
+      designation: z.string({
+        required_error: 'Designation is required',
+      }),
+      profileImage: z.string().optional(),
+    }),
+  }),
+});
 // req validation end
 export const userValidation = {
   creatuserZodSchima,
+  createFacultyZodSchema,
 };

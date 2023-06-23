@@ -8,7 +8,8 @@ import { ZodError } from 'zod';
 import handelZodError from '../../error/handelZodError';
 import handelCastError from '../../error/handelCastError';
 
-const globelErrorHandlers: ErrorRequestHandler = (error, req, res) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const globelErrorHandlers: ErrorRequestHandler = (error, req, res, next) => {
   config.evn === 'development'
     ? console.log('Global error Handel', error)
     : errorlogger.error('Global error Handel', error);

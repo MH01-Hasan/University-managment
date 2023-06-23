@@ -119,6 +119,46 @@
             "date": 1687374044316,
             "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\error\\UM-22-06-2023-01-error.log",
             "hash": "63d099ed5a2064307efb0a97e100a7cd7cf18d4887bf3e4e7983b17d0630e79c"
+        },
+        {
+            "date": 1687461551183,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\error\\UM-23-06-2023-01-error.log",
+            "hash": "f5109f431857f0dfdb770c6af8cf833135bea0548f7e0052e8074e35864210dd"
+        },
+        {
+            "date": 1687465754786,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\error\\UM-23-06-2023-02-error.log",
+            "hash": "34010fd121204a89bcaa851268cda858c00bdeb56b735951b9c3e4375b1ef392"
+        },
+        {
+            "date": 1687515929400,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\error\\UM-23-06-2023-16-error.log",
+            "hash": "6ab3300eb6f18695c8ac713a0cdd255bb8fa6de0eaedff74263d83de88064e7e"
+        },
+        {
+            "date": 1687519960961,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\error\\UM-23-06-2023-17-error.log",
+            "hash": "92ec29986762114ec3e79307f1ed144c13e5603c4c3631c24ba7dc1832747b93"
+        },
+        {
+            "date": 1687522480366,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\error\\UM-23-06-2023-18-error.log",
+            "hash": "51daaaeb5b96f69d7f1e0872389780766672477f870ad3ca7f58cbe80a7e0fad"
+        },
+        {
+            "date": 1687525221012,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\error\\UM-23-06-2023-19-error.log",
+            "hash": "1f15823b6f3016340015fb034176cb4c7f9dba63577499895c200d0d9cd16e97"
+        },
+        {
+            "date": 1687529439614,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\error\\UM-23-06-2023-20-error.log",
+            "hash": "d02202dc5e3a8ae71a2f2bd049adf1cde091187a58ebf8913f1c35fb525e53c0"
+        },
+        {
+            "date": 1687533009282,
+            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\error\\UM-23-06-2023-21-error.log",
+            "hash": "b3c6eaaca953abf471d2b4df6d6b93e800bdb8a7fb92b5ca9f6fa8084bbe728d"
         }
     ],
     "hashType": "sha256"
