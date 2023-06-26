@@ -50,6 +50,7 @@ const FacultySchema = new Schema<IFaculty, FacultyModel>(
     emergencyContactNo: {
       type: String,
       required: true,
+      unique: true,
     },
     presentAddress: {
       type: String,

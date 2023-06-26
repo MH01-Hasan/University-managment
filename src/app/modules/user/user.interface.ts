@@ -7,8 +7,19 @@ export type Iuser = {
   id: string;
   role: string;
   password: string;
+  needsPasswordChange: true | false;
   student?: Types.ObjectId | IStudent;
   faculty?: Types.ObjectId | IFaculty;
   admin?: Types.ObjectId | IAdmin;
 };
-export type UserModel = Model<Iuser, Record<string, unknown>>;
+
+/// instance password
+export type IUserMethods = {
+  isUserExist(id: string): Promise<Partial<Iuser> | null>;
+  isPasswordMatch(
+    givenPassword: string,
+    savePassword: string
+  ): Promise<boolean>;
+};
+
+export type UserModel = Model<Iuser, Record<string, unknown>, IUserMethods>;

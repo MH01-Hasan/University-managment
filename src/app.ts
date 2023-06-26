@@ -3,11 +3,13 @@ import cors from 'cors';
 import globelErrorHandlers from './app/middelware/globelErrorHandlers';
 import router from './app/routes';
 import status from 'http-status';
+import cookieParser from 'cookie-parser';
+
 const app: Application = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cookieParser());
 // api Routes use ....................................
 
 app.use('/api/v1/', router);

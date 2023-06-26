@@ -1,5 +1,5 @@
-import { Model } from 'mongoose';
-// import { IManagementDepartment } from '../managementDepartment/managementDepartment.inerface';
+import { Model, Types } from 'mongoose';
+import { IManagementDepartment } from '../managementDepartment/managementDepartment.inerface';
 
 export type Gender = 'male' | 'female';
 export type BloodGroup =
@@ -29,7 +29,7 @@ export type IAdmin = {
   permanentAddress?: string;
   presentAddress?: string;
   bloodGroup?: BloodGroup;
-  //   managementDepartment: Types.ObjectId | IManagementDepartment;
+  managementDepartment: Types.ObjectId | IManagementDepartment;
   designation: string;
 };
 
