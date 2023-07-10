@@ -11,6 +11,9 @@ const userSchema = new Schema<Iuser, Record<string, never>, IUserMethods>(
       type: Boolean,
       default: true,
     },
+    PasswordChangeAt: {
+      type: Date,
+    },
     student: { type: Schema.Types.ObjectId, ref: 'Student' },
     faculty: { type: Schema.Types.ObjectId, ref: 'Faculty' },
     admin: { type: Schema.Types.ObjectId, ref: 'Admin' },

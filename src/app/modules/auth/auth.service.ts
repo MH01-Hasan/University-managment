@@ -5,23 +5,24 @@ import {
   ILoginUser,
   ILoginUserResponse,
   IRefreshTokenResponse,
+  IchangePassword,
 } from './auth.interface';
-import { Secret } from 'jsonwebtoken';
+import { JwtPayload, Secret } from 'jsonwebtoken';
 import config from '../../../config';
 import { jwtHelpers } from '../../../halper/jwtHelpers';
+import bcrypt from 'bcrypt';
 
 const loginuser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
   const { id, password } = payload;
 
   //   creat instance
   const user = new User();
-
+  // check user
   const isUserexist = await user.isUserExist(id);
-
   if (!isUserexist) {
     throw new ApiError(httpStatus.NOT_FOUND, 'User not fund');
   }
-
+  /// match password and chicking
   if (
     isUserexist?.password &&
     !user.isPasswordMatch(password, isUserexist?.password)
@@ -54,6 +55,45 @@ const loginuser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
   );
 
   return { accessToken, refreshToken, needsPasswordChange };
+};
+
+const changePassword = async (
+  user: JwtPayload | null,
+  payload: IchangePassword
+): Promise<void> => {
+  const { oldPassword, NewPassword } = payload;
+  //   creat instance
+  const users = new User();
+
+  // chack user exist
+  console.log(user?.userId);
+  const isUserexist = await users?.isUserExist(user?.userId);
+  if (!isUserexist) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'User not fund');
+  }
+
+  // chacking old Passwod and match
+
+  if (
+    isUserexist?.password &&
+    !users?.isPasswordMatch(oldPassword, isUserexist?.password)
+  ) {
+    throw new ApiError(httpStatus.UNAUTHORIZED, 'old Password incorrect');
+  }
+
+  // hash password before
+  const hashnewPassword = await bcrypt.hash(
+    NewPassword,
+    Number(config.bycrypt_salt_rounds)
+  );
+
+  ///update Password
+  const updatedata = {
+    password: hashnewPassword,
+    needsPasswordChange: false,
+    PasswordChangeAt: new Date(),
+  };
+  await User.findOneAndUpdate({ id: user?.userId }, updatedata);
 };
 const refresh_Token = async (token: string): Promise<IRefreshTokenResponse> => {
   let verifiedToken = null;
@@ -93,4 +133,5 @@ const refresh_Token = async (token: string): Promise<IRefreshTokenResponse> => {
 export const AuthService = {
   loginuser,
   refresh_Token,
+  changePassword,
 };
