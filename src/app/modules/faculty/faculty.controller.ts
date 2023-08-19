@@ -19,7 +19,7 @@ const getAllFaculties = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IFaculty[]>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Semester Data ',
+    message: 'Semester Data ',
     meta: result.meta,
     data: result.data,
   });
@@ -32,7 +32,7 @@ const getSingleFaculty = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IFaculty>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Semester Data ',
+    message: 'Semester Data ',
     data: result,
   });
 });
@@ -45,7 +45,7 @@ const updateFaculty = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IFaculty>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Semester Data ',
+    message: 'Semester Data ',
     data: result,
   });
 });
@@ -57,7 +57,7 @@ const deleteFaculty = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IFaculty>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Semester Data ',
+    message: 'Semester Data ',
     data: result,
   });
 });

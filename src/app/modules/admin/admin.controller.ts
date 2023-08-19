@@ -17,7 +17,7 @@ const getAllAdmins = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IAdmin[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    massege: 'Admins retrieved successfully !',
+    message: 'Admins retrieved successfully !',
     meta: result.meta,
     data: result.data,
   });
@@ -30,7 +30,7 @@ const getSingleAdmin = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IAdmin>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    massege: 'Admin retrieved successfully !',
+    message: 'Admin retrieved successfully !',
     data: result,
   });
 });
@@ -44,7 +44,7 @@ const updateAdmin = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IAdmin>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    massege: 'Admin updated successfully !',
+    message: 'Admin updated successfully !',
     data: result,
   });
 });
@@ -56,7 +56,7 @@ const deleteAdmin = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IAdmin>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    massege: 'Admin deleted successfully !',
+    message: 'Admin deleted successfully !',
     data: result,
   });
 });

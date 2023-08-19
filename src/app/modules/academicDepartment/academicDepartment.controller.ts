@@ -17,7 +17,7 @@ const creatAcadimicDepartment = catchasync(
     sendResponse<IAcademicDepartment>(res, {
       statusCode: 200,
       success: true,
-      massege: 'success  creat Faculty',
+      message: 'success  creat Faculty',
       data: result,
     });
   }
@@ -34,7 +34,7 @@ const getAllDepartment = catchasync(async (req: Request, res: Response) => {
   sendResponse<IAcademicDepartment[]>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Faculty Data',
+    message: 'Faculty Data',
     meta: result.meta,
     data: result.data,
   });
@@ -48,7 +48,7 @@ const getSingelDepartment = catchasync(async (req: Request, res: Response) => {
   sendResponse<IAcademicDepartment>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Faculty Data',
+    message: 'Faculty Data',
     data: result,
   });
 });
@@ -64,7 +64,7 @@ const updateDepartment = catchasync(async (req: Request, res: Response) => {
   sendResponse<IAcademicDepartment>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Update Faculty Data Successfully',
+    message: 'Update Faculty Data Successfully',
     data: result,
   });
 });
@@ -76,7 +76,7 @@ const deleteDepartment = catchasync(async (req: Request, res: Response) => {
   sendResponse<IAcademicDepartment>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Delete Faculty Data Successfully',
+    message: 'Delete Faculty Data Successfully',
     data: result,
   });
 });

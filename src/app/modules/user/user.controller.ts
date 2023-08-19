@@ -12,7 +12,7 @@ const creatstudent: RequestHandler = catchasync(
     sendResponse(res, {
       statusCode: 200,
       success: false,
-      massege: 'success  creat user',
+      message: 'success  creat user',
       data: result,
     });
   }
@@ -26,7 +26,7 @@ const creatFaculty: RequestHandler = catchasync(
     sendResponse(res, {
       statusCode: 200,
       success: false,
-      massege: 'success  creat user',
+      message: 'success  creat user',
       data: result,
     });
   }
@@ -39,7 +39,7 @@ const createAdmin: RequestHandler = catchasync(
     sendResponse(res, {
       statusCode: 200,
       success: false,
-      massege: 'success  creat user',
+      message: 'success  creat user',
       data: result,
     });
   }

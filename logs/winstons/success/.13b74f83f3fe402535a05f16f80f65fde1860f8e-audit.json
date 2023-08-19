@@ -1,25 +1,25 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\.13b74f83f3fe402535a05f16f80f65fde1860f8e-audit.json",
+  "files": [
+    {
+      "date": 1688922113796,
+      "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\UM-09-07-2023-23-success.log",
+      "hash": "8041a0672f343b3e53faf9fdbf3598ae32b3131f7702c4a8f00922504ae75255"
     },
-    "auditLog": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\.13b74f83f3fe402535a05f16f80f65fde1860f8e-audit.json",
-    "files": [
-        {
-            "date": 1688922113796,
-            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\UM-09-07-2023-23-success.log",
-            "hash": "8041a0672f343b3e53faf9fdbf3598ae32b3131f7702c4a8f00922504ae75255"
-        },
-        {
-            "date": 1689004394042,
-            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\UM-10-07-2023-21-success.log",
-            "hash": "1ac74d977423bb1692437ccb7781cbb0f81b4fc5f331e1479c906cc0e4ce7e55"
-        },
-        {
-            "date": 1689005622627,
-            "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\UM-10-07-2023-22-success.log",
-            "hash": "73d3df71adeab18bfdf20f6d935206c4ab56ede9169f5aa00210dbe57eff0332"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1689004394042,
+      "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\UM-10-07-2023-21-success.log",
+      "hash": "1ac74d977423bb1692437ccb7781cbb0f81b4fc5f331e1479c906cc0e4ce7e55"
+    },
+    {
+      "date": 1689005622627,
+      "name": "C:\\All-Website\\University-managment\\Server-site\\logs\\winstons\\success\\UM-10-07-2023-22-success.log",
+      "hash": "73d3df71adeab18bfdf20f6d935206c4ab56ede9169f5aa00210dbe57eff0332"
+    }
+  ],
+  "hashType": "sha256"
 }

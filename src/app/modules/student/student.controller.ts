@@ -19,7 +19,7 @@ const getAllStudent = catchasync(async (req: Request, res: Response) => {
   sendResponse<IStudent[]>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Semester Data',
+    message: 'Semester Data',
     meta: result.meta,
     data: result.data,
   });
@@ -34,7 +34,7 @@ const getSingleStudent = catchasync(async (req: Request, res: Response) => {
   sendResponse<IStudent>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Semester Data ',
+    message: 'Semester Data ',
     data: result,
   });
 });
@@ -47,7 +47,7 @@ const updateStudent = catchasync(async (req: Request, res: Response) => {
   sendResponse<IStudent>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Update Semester Data Successfully',
+    message: 'Update Semester Data Successfully',
     data: result,
   });
 });
@@ -59,7 +59,7 @@ const deleteStudent = catchasync(async (req: Request, res: Response) => {
   sendResponse<IStudent>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Delete Semester Data Successfully',
+    message: 'Delete Semester Data Successfully',
     data: result,
   });
 });

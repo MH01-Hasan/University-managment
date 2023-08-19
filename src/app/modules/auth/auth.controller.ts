@@ -22,7 +22,7 @@ const loginuser: RequestHandler = catchasync(
     sendResponse(res, {
       statusCode: 200,
       success: true,
-      massege: 'user login success',
+      message: 'user login success',
       data: others,
     });
   }
@@ -36,7 +36,7 @@ const changePassword: RequestHandler = catchasync(
     sendResponse(res, {
       statusCode: 200,
       success: true,
-      massege: 'Password change successfully',
+      message: 'Password change successfully',
       data: result,
     });
   }
@@ -58,7 +58,7 @@ const refresh_Token = catchasync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: 200,
     success: true,
-    massege: 'user login success',
+    message: 'user login success',
     data: result,
   });
 });

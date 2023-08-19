@@ -17,7 +17,7 @@ const createDepartment = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IManagementDepartment>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    massege: 'Management department created successfully',
+    message: 'Management department created successfully',
     data: result,
   });
 });
@@ -34,7 +34,7 @@ const getAllDepartments = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IManagementDepartment[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    massege: 'Management departments retrieved successfully',
+    message: 'Management departments retrieved successfully',
     meta: result.meta,
     data: result.data,
   });
@@ -47,7 +47,7 @@ const getSingleDepartment = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IManagementDepartment>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    massege: 'Management department retieved successfully',
+    message: 'Management department retieved successfully',
     data: result,
   });
 });
@@ -64,7 +64,7 @@ const updateDepartment = catchAsync(
     sendResponse<IManagementDepartment>(res, {
       statusCode: httpStatus.OK,
       success: true,
-      massege: 'Management department updated successfully',
+      message: 'Management department updated successfully',
       data: result,
     });
   })
@@ -77,7 +77,7 @@ const deleteDepartment = catchAsync(async (req: Request, res: Response) => {
   sendResponse<IManagementDepartment>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    massege: 'Management department deleted successfully',
+    message: 'Management department deleted successfully',
     data: result,
   });
 });

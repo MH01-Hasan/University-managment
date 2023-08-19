@@ -17,7 +17,7 @@ const creatAcadimicSemister = catchasync(
     sendResponse(res, {
       statusCode: 200,
       success: true,
-      massege: 'success  creat Academic semister',
+      message: 'success  creat Academic semister',
       data: result,
     });
   }
@@ -36,7 +36,7 @@ const getAllSemester = catchasync(async (req: Request, res: Response) => {
   sendResponse<IacademicSemester[]>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Semester Data',
+    message: 'Semester Data',
     meta: result.meta,
     data: result.data,
   });
@@ -50,7 +50,7 @@ const getSingelSemester = catchasync(async (req: Request, res: Response) => {
   sendResponse<IacademicSemester>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Semester Data ',
+    message: 'Semester Data ',
     data: result,
   });
 });
@@ -63,7 +63,7 @@ const updateSemester = catchasync(async (req: Request, res: Response) => {
   sendResponse<IacademicSemester>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Update Semester Data Successfully',
+    message: 'Update Semester Data Successfully',
     data: result,
   });
 });
@@ -76,7 +76,7 @@ const deleteSemester = catchasync(async (req: Request, res: Response) => {
   sendResponse<IacademicSemester>(res, {
     statusCode: 200,
     success: true,
-    massege: 'Delete Semester Data Successfully',
+    message: 'Delete Semester Data Successfully',
     data: result,
   });
 });
